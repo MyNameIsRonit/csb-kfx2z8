@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+  </head>
+
+  <body>
+    <!-- <link rel="stylesheet" href="static\style.css"> -->
+    <!-- <link rel="stylesheet" href="{{url_for('static',filename='navbar.css')}}"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='game.css')}}" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='responsive.css')}}"
+    />
+    <header>
+      <nav>
+        <div class="navigation"></div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="game-containor">
+        <div class="details">
+          <!-- <div class="namet"> -->
+          <div class="xname">
+            <div class="x">X :</div>
+            <div id="x">{{first_player_name}}</div>
+          </div>
+          <div class="oname">
+            <div class="o">O :</div>
+            <div id="o">{{second_player_name}}</div>
+          </div>
+          <!-- </div> -->
+          <!-- <div class="score"> -->
+          <!-- <div class="seperator"></div> -->
+          <div class="xscore">
+            <div class="x">{{first_player_name}}'s Score :</div>
+            <div id="xscore">0</div>
+          </div>
+          <div class="oscore">
+            <div class="o">{{second_player_name}}'s Score :</div>
+            <div id="oscore">0</div>
+          </div>
+          <!-- </div> -->
+        </div>
+        <div class="box" id="box">
+          <div class="gbox">
+            <div class="game-box" id="game_box">
+              <div class="row-1 row">
+                <div class="box-1 g_box" data-row="1" data-col="1"></div>
+                <div class="box-2 g_box" data-row="1" data-col="2"></div>
+                <div class="box-3 g_box" data-row="1" data-col="3"></div>
+              </div>
+              <div class="row-2 row">
+                <div class="box-1 g_box" data-row="2" data-col="1"></div>
+                <div class="box-2 g_box" data-row="2" data-col="2"></div>
+                <div class="box-3 g_box" data-row="2" data-col="3"></div>
+              </div>
+              <div class="row-3 row">
+                <div class="box-1 g_box" data-row="3" data-col="1"></div>
+                <div class="box-2 g_box" data-row="3" data-col="2"></div>
+                <div class="box-3 g_box" data-row="3" data-col="3"></div>
+              </div>
+            </div>
+            <div class="game-animate-cont">
+              <div class="line" id="line"></div>
+            </div>
+            <div class="show-info" id="show-info">
+              <div class="over" id="over">Game Over!</div>
+              <div class="wins" id="wins">Xwins</div>
+            </div>
+          </div>
+
+          <div class="button" id="button">
+            <button class="play-again" id="play_again">Play Again</button>
+            <button class="restart"><a href="/home">Restart</a></button>
+          </div>
+        </div>
+      </div>
+      <audio id="background-music" loop>
+        <source src="static\game_over.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </main>
+
+    <footer>
+      <div class="containor">
+        <div class="content"></div>
+      </div>
+    </footer>
+  </body>
+  <script src="static/game.js"></script>
+</html>
